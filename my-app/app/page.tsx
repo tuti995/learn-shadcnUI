@@ -8,6 +8,7 @@ import { Button } from "@/components/ui/button";
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Calendar } from "@/components/ui/calendar";
+import { Checkbox } from "@/components/ui/checkbox";
 
 export default function Home() {
   const [date, setDate] = React.useState<Date | undefined>(new Date());
@@ -31,6 +32,15 @@ export default function Home() {
         onSelect={setDate}
         className="rounded-md border"
       />
+      <div className="flex items-center space-x-2">
+        <Checkbox id="terms" />
+        <label
+          htmlFor="terms"
+          className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+        >
+          Accept terms and conditions
+        </label>
+      </div>
     </main>
   );
 }
